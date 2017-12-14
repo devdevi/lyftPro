@@ -29,20 +29,20 @@ var numeroCel= function(){
    
 }
 
-
 //FUNCIONES
-var code = (0);
 var randomCode = function(){
   var phoneNumber = $("#icon_telephone").val().length;
-  
   if(phoneNumber == 9){
-    code += (Math.round(Math.random()*900)+99);
-    alert("Su codigo es  \n " + code);
-
+    window.localStorage.setItem("code", Math.round(Math.random()*900)+99);
+    alert("Su codigo es " + window.localStorage.getItem("code"));
+    window.localStorage.setItem("numberCode", $("#icon_telephone").val());
   }
-
 }
-console.log(code);
+
+
+//FUNCIONES
+
+console.log('numberCode');
 
 //Veryficar CODIGO
 var checkCode = function(){
@@ -51,12 +51,20 @@ var checkCode = function(){
   var thirtNum = $(".in-code").eq(2).val();
   var codeTotal = firstNum + secondNum + thirtNum;
   console.log(codeTotal);
-  if(codeTotal == code){
-      $("#listo").attr("href", "index.html");
+  if(codeTotal == window.localStorage.getItem("code")){
+      $("#listo").attr("href", "finish.html");
     } else {
       $("#listo").removeAttr("href");
-      alert("Código erróneo");
+      alert("Codigo erroneo");
       $(".in-code").val("");
       $(".in-code").eq(0).focus();
     }
 }
+$('#finishsed').click(function(){
+  $('#pageFinal').append(
+     '<div class="container pink center" id="splash">' +
+          '<h1 class=" white-text">Bienvenido</h1>' +
+           '<img src="assets/images/logo.svg" alt="">' +
+      '</div>' 
+    )
+})

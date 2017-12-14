@@ -9,7 +9,7 @@
 .logoD{
    
     width: 100%;
-    
+
 }
 
 #footPage{
@@ -27,7 +27,11 @@
     z-index: 4;
 }
 
-#splash img{
+#splash img {
 
     margin-top: 250px;
+}
+#splash h1 {
+
+    margin-top: 150px;
 }
