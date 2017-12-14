@@ -57,7 +57,7 @@ var checkCode = function(){
       $("#listo").removeAttr("href");
       alert("Codigo erroneo");
       $(".in-code").val("");
-      $(".in-code").eq(0).focus();
+      $("#listo").attr("href", "phone.html");
     }
 }
 $('#finishsed').click(function(){
