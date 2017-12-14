@@ -54,7 +54,6 @@ var checkCode = function(){
   if(codeTotal == window.localStorage.getItem("code")){
       $("#listo").attr("href", "finish.html");
     } else {
-      $("#listo").removeAttr("href");
       alert("Codigo erroneo");
       $(".in-code").val("");
       $("#listo").attr("href", "phone.html");
