@@ -1,4 +1,9 @@
 //generando el numero random
+$(function(){
+  setTimeout(function() {
+     $('#splash').fadeOut(700);
+  }, 2500);
+});
 
 
 $('#sendNumber').click(function(){
